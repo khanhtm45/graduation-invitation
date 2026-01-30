@@ -825,7 +825,7 @@ body {
 }
 
 /* Mobile responsive - Landscape Layout (2 columns) */
-@media (max-width: 480px) {
+@media (max-width: 968px) and (orientation: landscape) {
     body {
         overflow-x: hidden;
     }
@@ -835,7 +835,7 @@ body {
         max-width: 100%;
     }
 
-    /* Hide original header on mobile */
+    /* Hide original header on mobile landscape */
     .header {
         display: none;
     }
@@ -850,7 +850,7 @@ body {
 
     /* LEFT COLUMN */
     .left-panel {
-        padding: 40px 25px;
+        padding: 40px 30px;
         border-radius: 0;
         min-height: 100vh;
         display: flex;
@@ -888,7 +888,7 @@ body {
     }
 
     .invitation-title {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         margin-bottom: 15px;
         text-transform: uppercase;
         font-weight: 700;
@@ -898,7 +898,7 @@ body {
     }
 
     .invitation-message {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         margin-bottom: 12px;
         text-align: left;
         line-height: 1.4;
@@ -914,7 +914,7 @@ body {
     }
 
     .quote-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: var(--charcoal);
         font-weight: 600;
         text-transform: uppercase;
@@ -926,19 +926,9 @@ body {
         font-size: 2.5rem;
     }
 
-    .quote-marks.open {
-        top: 5px;
-        left: 5px;
-    }
-
-    .quote-marks.close {
-        bottom: 5px;
-        right: 5px;
-    }
-
     .graduate-photo {
-        max-width: 180px;
-        height: 240px;
+        max-width: 200px;
+        height: 260px;
         margin: 20px 0;
         border-width: 6px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -951,7 +941,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 40px 20px;
+        padding: 40px 25px;
         gap: 25px;
         position: relative;
     }
@@ -964,7 +954,7 @@ body {
         left: 50%;
         transform: translateX(-50%);
         font-family: Georgia, serif;
-        font-size: 2.8rem;
+        font-size: 3rem;
         color: var(--deep-blue);
         font-style: italic;
         white-space: nowrap;
@@ -974,10 +964,10 @@ body {
     .right-panel::after {
         content: 'Celebration';
         position: absolute;
-        top: 110px;
+        top: 115px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         color: var(--charcoal);
         letter-spacing: 0.15em;
         white-space: nowrap;
@@ -985,22 +975,22 @@ body {
     }
 
     .photo-card {
-        width: 240px;
-        height: 240px;
+        width: 260px;
+        height: 260px;
         padding: 12px;
         border-width: 8px;
         margin-top: 100px;
     }
 
     .photo-card::before {
-        font-size: 1.8rem;
+        font-size: 2rem;
         top: 15px;
         right: 25px;
     }
 
     .floating-badge {
-        width: 55px;
-        height: 55px;
+        width: 60px;
+        height: 60px;
         font-size: 2rem;
         top: -10px;
         right: -10px;
@@ -1015,7 +1005,7 @@ body {
     }
 
     .graduate-name {
-        font-size: 2rem;
+        font-size: 2.2rem;
         margin-bottom: 20px;
         color: var(--deep-blue);
         font-style: italic;
@@ -1030,7 +1020,7 @@ body {
     }
 
     .event-month {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         margin-bottom: 12px;
         letter-spacing: 0.1em;
         font-weight: 600;
@@ -1044,24 +1034,24 @@ body {
     }
 
     .event-day {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding-bottom: 3px;
         border-bottom: 2px solid var(--deep-blue);
     }
 
     .event-date {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         font-weight: 700;
     }
 
     .event-time {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding-bottom: 3px;
         border-bottom: 2px solid var(--deep-blue);
     }
 
     .event-location {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-top: 12px;
         line-height: 1.4;
         text-align: center;
@@ -1069,47 +1059,205 @@ body {
 
     .rsvp-button {
         padding: 12px 35px;
-        font-size: 1rem;
+        font-size: 1.1rem;
         gap: 8px;
         margin-top: 15px;
     }
 
-    .rsvp-button span:first-child {
+    .cap-decoration {
+        opacity: 0.12;
+    }
+}
+
+/* Mobile Portrait - Single Column */
+@media (max-width: 480px) and (orientation: portrait) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+    .university-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .left-panel {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    /* Hide university logo in left panel on portrait */
+    .left-panel .university-logo {
+        display: none;
+    }
+
+    .ribbon {
+        font-size: 0.85rem;
+        padding: 8px 20px;
+        top: 20px;
+    }
+
+    .invitation-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .invitation-message {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .quote-box {
+        padding: 20px;
+        margin: 25px 0;
+    }
+
+    .quote-text {
         font-size: 1.2rem;
     }
 
+    .quote-marks {
+        font-size: 3rem;
+    }
+
+    .graduate-photo {
+        max-width: 100%;
+        height: auto;
+        margin: 20px auto;
+        border-width: 6px;
+    }
+
+    .photo-card {
+        width: 280px;
+        height: 280px;
+        padding: 15px;
+        border-width: 8px;
+    }
+
+    .photo-card::before {
+        font-size: 2rem;
+        top: 20px;
+        right: 30px;
+    }
+
+    .floating-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        top: -10px;
+        right: -10px;
+    }
+
+    .name-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .graduate-name {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+    }
+
+    .event-details {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .event-month {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .event-main {
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    .event-day {
+        font-size: 1rem;
+    }
+
+    .event-date {
+        font-size: 2.5rem;
+    }
+
+    .event-time {
+        font-size: 1rem;
+    }
+
+    .event-location {
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+
+    .rsvp-button {
+        padding: 15px 40px;
+        font-size: 1.1rem;
+        gap: 10px;
+    }
+
+    .rsvp-button span:first-child {
+        font-size: 1.3rem;
+    }
+
+    .logo-stamp-page {
+        width: 60px;
+        height: 60px;
+        top: 10px;
+        left: 10px;
+        padding: 8px;
+        opacity: 0.85;
+    }
+
     .cap-decoration {
-        font-size: 35px;
-        width: 35px;
-        height: 35px;
-        opacity: 0.12;
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
     }
 
     /* Modal responsive */
     .modal-content {
-        padding: 35px 20px;
-        width: 85%;
+        padding: 40px 25px;
+        width: 95%;
         border-radius: 20px;
     }
 
     .modal-icon {
-        font-size: 50px;
-        margin-bottom: 12px;
+        font-size: 60px;
+        margin-bottom: 15px;
     }
 
     .modal-title {
-        font-size: 1.6rem;
-        margin-bottom: 12px;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
     }
 
     .modal-message {
-        font-size: 1rem;
-        margin-bottom: 20px;
+        font-size: 1.1rem;
+        margin-bottom: 25px;
     }
 
     .modal-button {
-        padding: 12px 35px;
-        font-size: 1rem;
+        padding: 12px 40px;
+        font-size: 1.1rem;
     }
 }
 
