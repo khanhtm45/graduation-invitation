@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Celebration - Nguyễn Việt Thy Thy</title>
+    <link rel="stylesheet" href="offline-style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+    <!-- Particles.js background -->
+    <div id="particles-js"></div>
+
+    <!-- Logo stamp in top-left corner of page -->
+    <div class="logo-stamp-page">
+        <img src="public/logo.png" alt="University Logo">
+    </div>
+
+    <!-- Floating decorations -->
+    <div class="cap-decoration cap-1">🎓</div>
+    <div class="cap-decoration cap-2">🎓</div>
+    <div class="cap-decoration cap-3">🎓</div>
+    <div class="cap-decoration cap-4">🎓</div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="university-logo">
+                <img src="public/3.png" alt="Graduation Cap">
+            </div>
+            <h1 class="main-title">Graduation</h1>
+            <p class="subtitle">Celebration</p>
+        </header>
+
+        <!-- Main content grid -->
+        <div class="content-grid">
+            <!-- Left panel -->
+            <div class="left-panel">
+                <div class="ribbon">CLASS OF 2022</div>
+
+                <div class="invitation-text">
+                    <h2 class="invitation-title">Join in Celebrating</h2>
+                    <p class="invitation-message">MY GRADUATION</p>
+                    <p class="invitation-message">Your presence means the world to me.</p>
+
+                    <div class="quote-box">
+                        <span class="quote-marks open">"</span>
+                        <p class="quote-text">The tassel was worth the hassle</p>
+                        <span class="quote-marks close">"</span>
+                    </div>
+
+                    <img src="public/2.jpg" alt="Graduate Photo" class="graduate-photo">
+                </div>
+            </div>
+
+            <!-- Right panel -->
+            <div class="right-panel">
+                <!-- Photo card -->
+                <div class="photo-card">
+                    <div class="floating-badge">🎓</div>
+                    <img src="public/1.jpg" alt="Graduate Main Photo" class="main-photo">
+                </div>
+
+                <!-- Name card -->
+                <div class="name-card">
+                    <h1 class="graduate-name">Hồ Tuyết My</h1>
+
+                    <!-- Event details -->
+                    <div class="event-details">
+                        <div class="event-month">FEBRUARY</div>
+
+                        <div class="event-main">
+                            <span class="event-day">THURSDAY</span>
+                            <span class="event-date">05</span>
+                            <span class="event-time">AT 10:00 AM</span>
+                        </div>
+
+                        <div class="event-location">HTL, UNIVERSITY OF CUU LONG</div>
+                    </div>
+
+                    <button id="rsvpButton" class="rsvp-button">
+                        <span>❤️</span>
+                        <span>RSVP Now</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom RSVP Modal -->
+    <div id="rsvpModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">🎉</div>
+            <h2 class="modal-title">Thank You!</h2>
+            <p class="modal-message">Thank you for confirming your attendance! We can't wait to celebrate with you! 🎓
+            </p>
+            <button id="modalCloseBtn" class="modal-button">OK</button>
+        </div>
+    </div>
+
+    <script src="offline-script.js"></script>
+</body>
+
+</html>

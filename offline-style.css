@@ -1,0 +1,867 @@
+:root {
+    --sky-blue: #a8d5e2;
+    --soft-blue: #6eb9d4;
+    --deep-blue: #4a7c9e;
+    --cream: #fef9f3;
+    --gold: #d4af37;
+    --charcoal: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: linear-gradient(135deg, var(--sky-blue) 0%, var(--cream) 50%, var(--soft-blue) 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Particles.js background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Floating decorations */
+.cap-decoration {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    opacity: 0.15;
+    font-size: 60px;
+    animation: float 20s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cap-1 {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.cap-2 {
+    top: 60%;
+    right: 8%;
+    animation-delay: 3s;
+}
+
+.cap-3 {
+    bottom: 15%;
+    left: 10%;
+    animation-delay: 6s;
+}
+
+.cap-4 {
+    top: 30%;
+    right: 15%;
+    animation-delay: 9s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-30px) rotate(5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateY(-40px) rotate(3deg);
+    }
+}
+
+/* Logo Stamp - Page Top Left Corner */
+.logo-stamp-page {
+    position: fixed;
+    top: 60px;
+    left: 30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    animation: stampFloat 3s ease-in-out infinite;
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.logo-stamp-page:hover {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Scalloped border effect for page logo */
+.logo-stamp-page::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 0%, transparent 8px, rgba(255, 255, 255, 0.3) 8px, rgba(255, 255, 255, 0.3) 9px, transparent 9px),
+        radial-gradient(circle at 100% 25%, transparent 8px, rgba(255, 255, 255, 0.3) 8px, rgba(255, 255, 255, 0.3) 9px, transparent 9px),
+        radial-gradient(circle at 100% 75%, transparent 8px, rgba(255, 255, 255, 0.3) 8px, rgba(255, 255, 255, 0.3) 9px, transparent 9px),
+        radial-gradient(circle at 50% 100%, transparent 8px, rgba(255, 255, 255, 0.3) 8px, rgba(255, 255, 255, 0.3) 9px, transparent 9px),
+        radial-gradient(circle at 0% 75%, transparent 8px, rgba(255, 255, 255, 0.3) 8px, rgba(255, 255, 255, 0.3) 9px, transparent 9px),
+        radial-gradient(circle at 0% 25%, transparent 8px, rgba(255, 255, 255, 0.3) 8px, rgba(255, 255, 255, 0.3) 9px, transparent 9px);
+    z-index: -1;
+}
+
+.logo-stamp-page img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes stampFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.university-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--soft-blue), var(--deep-blue));
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 5px;
+}
+
+.university-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.main-title {
+    font-family: Georgia, serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    color: var(--deep-blue);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.1;
+    font-style: italic;
+}
+
+.subtitle {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    color: var(--charcoal);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+/* Content grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+/* Left panel */
+.left-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+    animation: slideRight 1s ease-out 0.3s backwards;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.invitation-text {
+    position: relative;
+    z-index: 1;
+}
+
+.invitation-title {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    color: var(--deep-blue);
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.invitation-message {
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    color: var(--soft-blue);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.quote-box {
+    background: linear-gradient(135deg, rgba(168, 213, 226, 0.2) 0%, rgba(110, 185, 212, 0.2) 100%);
+    border-left: 4px solid var(--gold);
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 15px;
+    position: relative;
+}
+
+.quote-text {
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    color: var(--charcoal);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.quote-marks {
+    font-size: 4rem;
+    color: var(--soft-blue);
+    opacity: 0.3;
+    position: absolute;
+    font-family: Georgia, serif;
+}
+
+.quote-marks.open {
+    top: 10px;
+    left: 10px;
+}
+
+.quote-marks.close {
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Photo placeholders */
+.graduate-photo-placeholder,
+.main-photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(168, 213, 226, 0.2), rgba(110, 185, 212, 0.2));
+    border: 3px dashed var(--soft-blue);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.graduate-photo-placeholder {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    margin: 30px auto;
+}
+
+.main-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.graduate-photo-placeholder:hover,
+.main-photo-placeholder:hover {
+    background: linear-gradient(135deg, rgba(168, 213, 226, 0.3), rgba(110, 185, 212, 0.3));
+    border-color: var(--deep-blue);
+    transform: scale(1.02);
+}
+
+.photo-icon,
+.photo-icon-large {
+    font-size: 60px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.photo-icon-large {
+    font-size: 80px;
+}
+
+.graduate-photo-placeholder p,
+.main-photo-placeholder p {
+    font-size: 1.2rem;
+    color: var(--soft-blue);
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Actual photos */
+.graduate-photo {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    margin: 30px auto;
+    display: block;
+    border: 8px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, var(--gold), var(--soft-blue), var(--deep-blue)) border-box;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.graduate-photo:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
+}
+
+.main-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 12px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, var(--gold), var(--soft-blue), var(--deep-blue)) border-box;
+}
+
+/* Right panel */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.photo-card {
+    background: white;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    width: 420px;
+    height: 420px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 10px solid rgba(255, 255, 255, 0.9);
+    animation: zoomIn 1s ease-out 0.5s backwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.photo-card::before {
+    content: '★';
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    color: var(--gold);
+    animation: starPulse 2s infinite ease-in-out;
+}
+
+@keyframes starPulse {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+.name-card {
+    background: linear-gradient(135deg, var(--deep-blue) 0%, var(--soft-blue) 100%);
+    border-radius: 30px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: visible;
+    animation: slideLeft 1s ease-out 0.7s backwards;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.graduate-name {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    color: white;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+
+/* Event details */
+.event-details {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 45px 35px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.event-month {
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    font-weight: 600;
+    color: var(--deep-blue);
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+}
+
+.event-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.event-day {
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    font-weight: 600;
+    color: var(--deep-blue);
+    letter-spacing: 0.1em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--deep-blue);
+}
+
+.event-date {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+}
+
+.event-time {
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    font-weight: 600;
+    color: var(--deep-blue);
+    letter-spacing: 0.1em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--deep-blue);
+}
+
+.event-location {
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    font-weight: 600;
+    color: var(--soft-blue);
+    letter-spacing: 0.05em;
+    margin-top: 20px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Logo Stamp/Emblem Style - Top Left Corner */
+.name-card .logo-stamp {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid var(--gold);
+    animation: stampFloat 3s ease-in-out infinite;
+    z-index: 10;
+}
+
+/* Scalloped border effect */
+.logo-stamp::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 0%, transparent 8px, var(--gold) 8px, var(--gold) 9px, transparent 9px),
+        radial-gradient(circle at 100% 25%, transparent 8px, var(--gold) 8px, var(--gold) 9px, transparent 9px),
+        radial-gradient(circle at 100% 75%, transparent 8px, var(--gold) 8px, var(--gold) 9px, transparent 9px),
+        radial-gradient(circle at 50% 100%, transparent 8px, var(--gold) 8px, var(--gold) 9px, transparent 9px),
+        radial-gradient(circle at 0% 75%, transparent 8px, var(--gold) 8px, var(--gold) 9px, transparent 9px),
+        radial-gradient(circle at 0% 25%, transparent 8px, var(--gold) 8px, var(--gold) 9px, transparent 9px);
+    z-index: -1;
+}
+
+.logo-stamp img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes stampFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+}
+
+/* Old detail-item styles - keep for compatibility */
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    color: var(--charcoal);
+    position: relative;
+    z-index: 1;
+}
+
+.detail-item .icon {
+    font-size: 1.8rem;
+    margin-right: 15px;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--deep-blue);
+    min-width: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+
+.detail-value {
+    font-weight: 400;
+    flex: 1;
+}
+
+.location {
+    font-weight: 600;
+    color: var(--soft-blue);
+}
+
+/* RSVP Button */
+.rsvp-button {
+    background: linear-gradient(135deg, var(--gold) 0%, #f4d03f 100%);
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+    letter-spacing: 0.1em;
+    position: relative;
+    z-index: 1;
+}
+
+.rsvp-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+}
+
+.rsvp-button span:first-child {
+    font-size: 1.5rem;
+}
+
+/* Floating badge */
+.floating-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--gold) 0%, #f4d03f 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+    animation: badgePulse 2s ease-in-out infinite;
+    z-index: 10;
+    font-size: 2.5rem;
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.8);
+    }
+}
+
+/* Ribbon */
+.ribbon {
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    background: linear-gradient(135deg, var(--gold) 0%, #f4d03f 100%);
+    padding: 10px 30px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    animation: ribbonWave 3s ease-in-out infinite;
+}
+
+.ribbon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 21px 20px 21px 0;
+    border-color: transparent var(--gold) transparent transparent;
+}
+
+@keyframes ribbonWave {
+
+    0%,
+    100% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .photo-card {
+        width: 350px;
+        height: 350px;
+    }
+
+    .container {
+        padding: 40px 20px;
+    }
+
+    .left-panel,
+    .name-card,
+    .event-details {
+        padding: 35px;
+    }
+}
+
+/* Custom RSVP Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(254, 249, 243, 0.95));
+    border-radius: 30px;
+    padding: 50px 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    animation: modalSlideIn 0.4s ease;
+    position: relative;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.modal-title {
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--deep-blue);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.modal-message {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--charcoal);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.modal-button {
+    background: linear-gradient(135deg, var(--gold) 0%, #f4d03f 100%);
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+    letter-spacing: 0.05em;
+}
+
+.modal-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+}
